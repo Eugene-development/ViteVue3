@@ -9,7 +9,8 @@ import { v4 as uuidv4 } from 'uuid';
 export const useCounter:any = defineStore("counter",{
     state: () => ({
         n: 1,
-        axi: ''
+        axi: '',
+        axiUsers: ''
     }),
 
     actions: {
@@ -17,12 +18,20 @@ export const useCounter:any = defineStore("counter",{
             this.n++;
         },
         async getPosts (){
-            const { privet, name } = usePrivet;
+            const { privet, name, getData } = usePrivet;
 
-            const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
-            this.axi = data
+            const phPosts : string = 'https://jsonplaceholder.typicode.com/posts';
+            const phUsers : string = 'https://jsonplaceholder.typicode.com/users';
 
-            console.log(data)
+            const {data : all} = await getData(phPosts);
+            const {data : users} = await getData(phUsers);
+
+
+            // const {data} = await axios.get(ph);
+            this.axi = all
+            this.axiUsers = users
+
+            // console.log(all)
             console.log(name('Victory'))
             console.log(name('Eugene'))
             console.log(uuidv4())
@@ -34,7 +43,8 @@ export const useCounter:any = defineStore("counter",{
 
     getters: {
         double: (state: any) => state.n+2,
-        axios: (state) => state.axi
+        axios: (state) => state.axi,
+        axiosUsers: (state) => state.axiUsers
     },
 
 })

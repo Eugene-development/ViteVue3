@@ -1,7 +1,9 @@
 <template>
 <p>
   test-{{double}} <br>
-  test2-{{axi}} <br>
+  <p class="bg-red-100">test2-{{axi}}</p><br>
+   <p class="bg-blue-100">test3-{{axiosUsers}}</p>
+   <br>
 
 
   <button class="bg-red-800" @click="changeMe">Click me</button>
@@ -18,6 +20,6 @@ const main = useCounter();
 const {changeMe, getPosts} = main
 // const {changeMe} = mapActions(useCounter, ["changeMe"])
 
-const {double, axi} = storeToRefs(main)
+const {double, axi, axiosUsers} = storeToRefs(main)
 
 </script>
