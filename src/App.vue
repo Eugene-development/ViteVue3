@@ -5,6 +5,8 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <router-view/>
+  <p>Хэдер</p>
+    <router-view/>
+  <p>Футер</p>
 </template>
 
