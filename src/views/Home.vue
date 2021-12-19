@@ -6,6 +6,9 @@
       <button class="m-4 bg-blue-500 shadow-lg ">Подписаться</button>
       <button class="m-4 bg-indigo-500 shadow-lg ">Подписаться</button>
 
+
+      <router-link to="/about" class="text-2xl">Go to About</router-link>
+
     </div>
 
     <div class="justify-center flex bg-yellow-300 items-center h-screen">
