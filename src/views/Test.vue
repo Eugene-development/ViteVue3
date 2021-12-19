@@ -1,6 +1,8 @@
 <template>
 <p>
-  test-{{double}}
+  test-{{double}} <br>
+  test2-{{axi}} <br>
+
 
   <button class="bg-red-800" @click="changeMe">Click me</button>
   <button class="bg-red-800" @click="getPosts">Click Axios</button>
@@ -16,6 +18,6 @@ const main = useCounter();
 const {changeMe, getPosts} = main
 // const {changeMe} = mapActions(useCounter, ["changeMe"])
 
-const {double} = storeToRefs(main)
+const {double, axi} = storeToRefs(main)
 
 </script>

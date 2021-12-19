@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const useCounter:any = defineStore("counter",{
     state: () => ({
         n: 1,
+        axi: ''
     }),
 
     actions: {
@@ -19,10 +20,13 @@ export const useCounter:any = defineStore("counter",{
             const { privet, name } = usePrivet;
 
             const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            this.axi = data
+
             console.log(data)
             console.log(name('Victory'))
             console.log(name('Eugene'))
             console.log(uuidv4())
+
         }
 
 
@@ -30,6 +34,7 @@ export const useCounter:any = defineStore("counter",{
 
     getters: {
         double: (state: any) => state.n+2,
+        axios: (state) => state.axi
     },
 
 })
