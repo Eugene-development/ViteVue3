@@ -1,11 +1,12 @@
 import {acceptHMRUpdate, defineStore} from 'pinia'
 
-// import { usePrivet } from "@/methods/testMethods";
 import {usePrivet} from "../methods/test";
+import axios from "axios";
 
-export const useCounter:any = defineStore({
-    id: 'counter',
+// @ts-ignore
+import { v4 as uuidv4 } from 'uuid';
 
+export const useCounter:any = defineStore("counter",{
     state: () => ({
         n: 1,
     }),
@@ -17,10 +18,11 @@ export const useCounter:any = defineStore({
         async getPosts (){
             const { privet, name } = usePrivet;
 
-            // const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
-            // console.log(data)
+            const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
+            console.log(data)
             console.log(name('Victory'))
             console.log(name('Eugene'))
+            console.log(uuidv4())
         }
 
 

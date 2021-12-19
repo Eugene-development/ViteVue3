@@ -1,21 +1,21 @@
 <template>
 <p>
   test-{{double}}
+
+  <button class="bg-red-800" @click="changeMe">Click me</button>
+  <button class="bg-red-800" @click="getPosts">Click Axios</button>
 </p>
 </template>
 
 <script setup lang="ts">
 
-import {storeToRefs} from "pinia";
+import {storeToRefs, mapActions} from "pinia";
 import {useCounter} from "../stores/counter";
 const main = useCounter();
 
-const {double} = storeToRefs(main)
+const {changeMe, getPosts} = main
+// const {changeMe} = mapActions(useCounter, ["changeMe"])
 
-// import {storeToRefs} from "pinia";
-// import {useCounter} from "~/stores/counter";
-// const main = useCounter();
-//
-// const {double, jsonAxios4} = storeToRefs(main);
+const {double} = storeToRefs(main)
 
 </script>
