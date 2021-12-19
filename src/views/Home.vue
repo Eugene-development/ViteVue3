@@ -8,6 +8,7 @@
 
 
       <router-link to="/about" class="text-2xl">Go to About</router-link>
+      <router-link to="/test" class="text-2xl">Go to Test</router-link>
 
     </div>
 
