@@ -11,8 +11,11 @@ import axios from "axios";
 
 let getData = (ph: string) => axios.get(ph)
 
+let getDataMain = (url: string, apiCRUD: object) => axios.get(url, apiCRUD)
+
 export const usePrivet = {
     privet,
     name,
-    getData
+    getData,
+    getDataMain
 }
