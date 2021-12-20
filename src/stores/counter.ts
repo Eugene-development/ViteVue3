@@ -21,7 +21,7 @@ export const useCounter:any = defineStore("counter",{
             const { privet, name, getData } = usePrivet;
 
             const phPosts : string = 'https://jsonplaceholder.typicode.com/posts';
-            const phUsers : string = 'https://jsonplaceholder.typicode.com/users';
+            const phUsers : any = import.meta.env.VITE_URL;
 
             const {data : all} = await getData(phPosts);
             const {data : users} = await getData(phUsers);
@@ -35,6 +35,7 @@ export const useCounter:any = defineStore("counter",{
             console.log(name('Victory'))
             console.log(name('Eugene'))
             console.log(uuidv4())
+            console.log(import.meta.env.BASE_URL)
 
         }
 

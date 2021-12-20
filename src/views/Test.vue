@@ -1,17 +1,14 @@
 <template>
-<p>
   test-{{double}} <br>
   <p class="bg-red-100">test2-{{axi}}</p><br>
    <p class="bg-blue-100">test3-{{axiosUsers}}</p>
    <br>
 
-
   <button class="bg-red-800" @click="changeMe">Click me</button>
   <button class="bg-red-800" @click="getPosts">Click Axios</button>
-</p>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" type="module">
 
 import {storeToRefs, mapActions} from "pinia";
 import {useCounter} from "../stores/counter";
